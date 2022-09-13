@@ -17,25 +17,17 @@ function App() {
       .then((error) => {
         alert("Server is currently down.")
       });
-<<<<<<< HEAD
+    setIsLightMode(!!localStorage.getItem("isLightMode"))
   }, []);
 
-<<<<<<< HEAD
+  useEffect(() => {
+    localStorage.setItem("isLightMode", isLightMode)
+  }, [isLightMode])
+
   function handleAddSuspect(newSuspect){
     const updatedSuspectArray = [...criminalList, newSuspect];
-    setPlants(updatedSuspectArray)
+    setCriminalList(updatedSuspectArray)
   }
-=======
-
->>>>>>> 0d5769528bcb97fe8d91e926f5540ba1f2fe1244
-=======
-      setIsLightMode(!!localStorage.getItem("isLightMode"))
-    }, []);
-  
-    useEffect(() => {
-      localStorage.setItem("isLightMode", isLightMode)
-    }, [isLightMode])
->>>>>>> 7edb32272ea5affa342877c6851dfd9ad6645337
 
   return (
     <Router>
