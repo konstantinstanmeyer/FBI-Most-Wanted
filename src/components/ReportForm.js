@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { v4 as uuidv4 } from 'uuid';
 
 function ReportForm({ handleAddSuspect }){
     const [alias, setAlias] = useState("")
@@ -8,7 +9,7 @@ function ReportForm({ handleAddSuspect }){
     const [warning, setWarning] = useState("")
     const [caution, setCaution] = useState("")
     const [url, setUrl] = useState("")
-    
+
     function handleSubmit(e){
         e.preventDefault();
         fetch("http://localhost:3000/items", {
@@ -17,19 +18,18 @@ function ReportForm({ handleAddSuspect }){
                 "Content-Type" : "application/json",
             },
             body: JSON.stringify({
-                aliases: alias,
-                description: suspectDesc,
-                image: url,
-                details: crimeDesc,
-                warning: warning,
-                reward: reward,
-                caution: caution,
-            }),
+                "aliases": alias,
+                "description": suspectDesc,
+                "image": url,
+                "details": crimeDesc,
+                "warning": warning,
+                "reward": reward,
+                "caution": caution,
+                "id": uuidv4(),
+            })
         })
         .then(r => r.json())
-        .then((newSuspect) => {
-            handleAddSuspect(newSuspect)
-        })
+        .then((newSuspect) => handleAddSuspect(newSuspect))
     }
 
     return(
