@@ -1,33 +1,71 @@
 /* dark/light mode color vars */
 .dark {
   --background-color: #1c1c1c;
-  --background-elev-1: rgba(255,255,255, 0.05);
-  --background-elev-2: rgba(255,255,255, 0.10);
+  --background-elev-1: rgba(255, 255, 255, 0.05);
+  --background-elev-2: rgba(255, 255, 255, 0.10);
   --text-color: white;
   --color-link: #74b6f3;
 }
 .light {
   --background-color: white;
-  --background-elev-1: rgba(0,0,0, 0.05);
-  --background-elev-2: rgba(0,0,0, 0.10);
+  --background-elev-1: rgba(0, 0, 0, 0.05);
+  --background-elev-2: rgba(0, 0, 0, 0.10);
   --text-color: black;
   --color-link: #2089ff;
 }
 
+#App {
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
 /* ----- Layout ----- */
-/* report form */
-#report-form  {
+#page {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+/* header */
+#header {
+  max-width: 80rem;
   display: flex;
   flex-direction: row;
 }
-#report-form > div > form {
+#header nav {
+  font-size: 1.25rem;
+  margin-top: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#page-links a {
+  margin: 1rem;
+}
+/* report form */
+#report-form {
+  display: flex;
+  flex-direction: row;
+}
+#form-preview{
+  padding-left: 1rem;
+}
+.form-container {
+  width: 100%;
+  max-width: 30rem;
+}
+.form-container > form {
   display: flex;
   flex-direction: column;
+}
+/* Criminal Search */
+#page .wrapper {
+  padding: 0px;
 }
 .criminal {
   display: flex;
   flex-direction: row;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 .mugshot-container > img {
   width: 10rem;
@@ -35,11 +73,6 @@
 }
 
 
-#App {
-  background: var(--background-color);
-  color: var(--text-color);
-  min-height: 100vh;
-}
 a {
   text-decoration: none;
   color: var(--color-link);
@@ -53,7 +86,7 @@ h1,h2,h3,h4,p {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
-input, button {
+input, button, textarea {
   background-color: var(--background-elev-1);
   color: var(--text-color);
   border: 0;
@@ -65,13 +98,6 @@ input:hover, button:hover {
   background-color: var(--background-elev-2);
 }
 
-#site-header {
-  display: flex;
-  flex-direction: row;
-}
-#page-links a {
-  margin: 1rem;
-}
 #user-controls > button {
   width: 2rem;
   height: 2rem;

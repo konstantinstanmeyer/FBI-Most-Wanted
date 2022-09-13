@@ -4,7 +4,7 @@ import darkModeIcon from "../assets/moon.svg"
 
 function Header({isLightMode, setIsLightMode}) {
     return (
-        <div id="site-header">
+        <div id="header">
             <div id="logo">
 
             </div>
