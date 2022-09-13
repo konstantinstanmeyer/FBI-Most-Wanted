@@ -1,9 +1,11 @@
 import React from "react";
 import Criminal from "./Criminal.js"
 
-function CriminalList({ items }) {
+function CriminalList({ criminalList }) {
 
-    const displayCriminals = items.map((criminal) => {
+    console.log(criminalList)
+
+    const displayCriminals = criminalList.map((criminal) => {
         return (
             <Criminal 
             key={criminal.url}
