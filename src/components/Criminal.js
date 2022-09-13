@@ -5,8 +5,12 @@ function Criminal({ criminal: { aliases, description, images, details, warning, 
   let aliasesNode;
   if (aliases !== null) {
     aliasesNode = (
-      <h3>{(aliases.length>1? "Aliases: " : "Alias: ") + aliases}</h3>
+      <h3>{("Suspect" + aliases.length>1? "Aliases: " : "Alias: ") + aliases.map((alias)=>" " + alias) }</h3>
     ) 
+  } else {
+    aliasesNode = (
+      <h3>Unknown Suspect</h3>
+    )
   }
 
   let mugshot;
