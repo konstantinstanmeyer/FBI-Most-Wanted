@@ -14,14 +14,12 @@ function App() {
     fetch("http://localhost:3000/items")
       .then((response) => response.json())
       .then((data) => setCriminalList(data))
-      .then((error) => {
-        console.log("Server is currently down.")
       .catch((error) => {
         alert("Server is currently down.")
       });
     setIsLightMode(!!localStorage.getItem("isLightMode"))
   }, [])
-  });
+  ;
 
   useEffect(() => {
     localStorage.setItem("isLightMode", isLightMode)
