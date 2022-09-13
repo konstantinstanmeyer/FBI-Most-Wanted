@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function ReportForm({ onAddSuspect }){
+function ReportForm({ handleAddSuspect }){
     const [alias, setAlias] = useState("")
     const [reward, setReward] = useState("")
     const [crimeDesc, setCrimeDesc] = useState("")
