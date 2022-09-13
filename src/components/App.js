@@ -11,8 +11,13 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/items")
       .then((response) => response.json())
-      .then((data) => setCriminalList(data));
+      .then((data) => setCriminalList(data))
+      .then((error) => {
+        alert("Server is currently down.")
+      });
   }, []);
+
+
 
   return (
     <Router>
@@ -26,7 +31,7 @@ function App() {
           }/>
           <Route path="/search" element={
             /* "Most Wanted" page, search bar and a couple filters to browse the database */
-            <CriminalList items={criminalList} />
+            <CriminalList criminalList={criminalList} />
           }/>
           <Route path="/report" element={
             /* Form to add new members to the most wanted page */
