@@ -12,13 +12,20 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/items")
       .then((response) => response.json())
-      .then((data) => setCriminalList(data));
+      .then((data) => setCriminalList(data))
+      .then((error) => {
+        alert("Server is currently down.")
+      });
   }, []);
 
+<<<<<<< HEAD
   function handleAddSuspect(newSuspect){
     const updatedSuspectArray = [...criminalList, newSuspect];
     setPlants(updatedSuspectArray)
   }
+=======
+
+>>>>>>> 0d5769528bcb97fe8d91e926f5540ba1f2fe1244
 
   return (
     <Router>
@@ -32,7 +39,7 @@ function App() {
           }/>
           <Route path="/search" element={
             /* "Most Wanted" page, search bar and a couple filters to browse the database */
-            <CriminalList items={criminalList} />
+            <CriminalList criminalList={criminalList} />
           }/>
           <Route path="/report" element={
             /* Form to add new members to the most wanted page */
