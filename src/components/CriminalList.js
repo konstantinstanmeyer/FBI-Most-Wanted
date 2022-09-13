@@ -1,6 +1,7 @@
 import React from "react";
 import Criminal from "./Criminal.js"
 
+
 function CriminalList({ criminalList }) {
 
     console.log(criminalList)

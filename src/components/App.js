@@ -13,7 +13,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => setCriminalList(data))
       .then((error) => {
-        alert("Server is currently down.")
+        console.log("Server is currently down.")
       });
   }, []);
 
