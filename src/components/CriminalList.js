@@ -1,10 +1,9 @@
 import React from "react";
 import Criminal from "./Criminal.js"
+import '../CriminalList.css';
 
 
 function CriminalList({ criminalList }) {
-
-    console.log(criminalList)
 
     const displayCriminals = criminalList.map((criminal) => {
         return (
@@ -17,6 +16,7 @@ function CriminalList({ criminalList }) {
             warning={criminal.warning_message}
             reward={criminal.reward_text}
             caution={criminal.caution}
+            missing={criminal.subjects}
             />
         )
     })
@@ -24,7 +24,7 @@ function CriminalList({ criminalList }) {
 
 
   return (
-  <div>
+  <div className="wrapper">
       {displayCriminals}
   </div>
   );
