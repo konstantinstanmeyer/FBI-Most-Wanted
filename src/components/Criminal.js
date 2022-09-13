@@ -3,7 +3,7 @@ import '../Criminal.css';
 
 function Criminal({ missing, alias, description, image, details, warning, reward, caution }) {
 
-    const missingPerson = "Missing Persons"
+    
 
   return (
     <div className="criminal-wrapper">

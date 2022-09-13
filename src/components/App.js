@@ -16,6 +16,8 @@ function App() {
       .then((data) => setCriminalList(data))
       .then((error) => {
         console.log("Server is currently down.")
+      .catch((error) => {
+        alert("Server is currently down.")
       });
     setIsLightMode(!!localStorage.getItem("isLightMode"))
   }, []);
@@ -51,6 +53,7 @@ function App() {
       </div>
     </Router>
   );
+})
 }
 
-export default App;
+export default App
