@@ -1,25 +1,24 @@
-import logo from '../assets/logo.svg';
-import '../App.css';
+import React, { useState, useEffect } from "react";
+import CriminalList from "./CriminalList";
 
 function App() {
+
+  const [items, setItems] = useState([])
+
+
+  useEffect(() => {
+    fetch("http://localhost:3000/items")
+      .then((response) => response.json())
+      .then((data) => setItems(data));
+  }, []);
+
+  console.log(items)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CriminalList items={items} />
     </div>
-  );
+  )
 }
 
 export default App;
