@@ -9,13 +9,7 @@ function CriminalList({ criminalList }) {
         return (
             <Criminal 
             key={criminal.url}
-            alias={criminal.aliases}
-            description={criminal.description}
-            image={criminal.images[0].original}
-            details={criminal.details}
-            warning={criminal.warning_message}
-            reward={criminal.reward_text}
-            caution={criminal.caution}
+            criminal={criminal}
             />
         )
     })
