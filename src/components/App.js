@@ -1,7 +1,7 @@
 import '../App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Nav from './Nav';
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './Nav';
 import CriminalList from "./CriminalList";
 
 function App() {
@@ -19,18 +19,20 @@ function App() {
       <div>
         <Nav/>
 
-        <Switch>
-          <Route path="/">
-            {/* Home Page */}
-          </Route>
-          <Route path="/search">
-            {/* "Most Wanted" page, search bar and a couple filters to browse the database */}
+        <Routes>
+          <Route path="/" element={
+            /* Home Page */
+            <p>Home Page Not yet implemented</p>
+          }/>
+          <Route path="/search" element={
+            /* "Most Wanted" page, search bar and a couple filters to browse the database */
             <CriminalList items={criminalList} />
-          </Route>
-          <Route path="/report">
-            {/* Form to add new members to the most wanted page */}
-          </Route>
-        </Switch>
+          }/>
+          <Route path="/report" element={
+            /* Form to add new members to the most wanted page */
+            <p>Reporting new Wanted Criminals is not yet implemented</p>
+          }/>
+        </Routes>
       </div>
     </Router>
   );
