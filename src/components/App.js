@@ -20,11 +20,12 @@ function App() {
         alert("Server is currently down.")
       });
     setIsLightMode(!!localStorage.getItem("isLightMode"))
-  }, []);
+  }, [])
+  });
 
   useEffect(() => {
     localStorage.setItem("isLightMode", isLightMode)
-  }, [isLightMode])
+  , [isLightMode]})
 
   function handleAddSuspect(newSuspect){
     const updatedSuspectArray = [...criminalList, newSuspect];
@@ -53,7 +54,6 @@ function App() {
       </div>
     </Router>
   );
-})
 }
 
 export default App
