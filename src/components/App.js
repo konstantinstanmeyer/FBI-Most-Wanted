@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import CriminalList from "./CriminalList";
+import ReportForm from './ReportForm';
 
 function App() {
 
@@ -13,6 +14,11 @@ function App() {
       .then((response) => response.json())
       .then((data) => setCriminalList(data));
   }, []);
+
+  function handleAddSuspect(newSuspect){
+    const updatedSuspectArray = [...criminalList, newSuspect];
+    setPlants(updatedSuspectArray)
+  }
 
   return (
     <Router>
@@ -30,7 +36,7 @@ function App() {
           }/>
           <Route path="/report" element={
             /* Form to add new members to the most wanted page */
-            <p>Reporting new Wanted Criminals is not yet implemented</p>
+            <ReportForm onAddSuspect={handleAddSuspect}/>
           }/>
         </Routes>
       </div>
