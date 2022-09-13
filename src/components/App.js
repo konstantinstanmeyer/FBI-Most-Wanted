@@ -1,23 +1,30 @@
 import '../App.css';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './Nav';
+import Header from './Header';
 import CriminalList from "./CriminalList";
 
 function App() {
-
+  const [isLightMode, setIsLightMode] = useState(false)
   const [criminalList, setCriminalList] = useState([])
 
   useEffect(() => {
+    // fetch criminals from database
     fetch("http://localhost:3000/items")
       .then((response) => response.json())
       .then((data) => setCriminalList(data));
+    
+    setIsLightMode(!!localStorage.getItem("isLightMode"))
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("isLightMode", isLightMode)
+  }, [isLightMode])
 
   return (
     <Router>
-      <div>
-        <Nav/>
+      <div className={isLightMode? "light":"dark"}>
+        <Header isLightMode={isLightMode} setIsLightMode={setIsLightMode}/>
 
         <Routes>
           <Route path="/" element={
