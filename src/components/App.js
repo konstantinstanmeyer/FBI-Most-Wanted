@@ -27,7 +27,7 @@ function App() {
 
   function handleAddSuspect(newSuspect){
     const updatedSuspectArray = [...criminalList, newSuspect];
-    setCriminalList(updatedSuspectArray)
+   setCriminalList(updatedSuspectArray)
   }
 
   return (
