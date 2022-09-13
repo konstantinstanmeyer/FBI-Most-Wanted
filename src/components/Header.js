@@ -19,7 +19,7 @@ function Header({isLightMode, setIsLightMode}) {
 
             <div id="user-controls">
                 <button onClick={()=>{setIsLightMode(!isLightMode)}} title="Switch theme">
-                    <img src={isLightMode? lightModeIcon: darkModeIcon} alt={isLightMode? "a moon": "a sun"}/>
+                    <img src={isLightMode? darkModeIcon: lightModeIcon} alt={isLightMode? "a moon": "a sun"}/>
                 </button>
             </div>
         </div>

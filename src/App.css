@@ -1,3 +1,70 @@
+/* dark/light mode color vars */
+.dark {
+  --background-color: #1c1c1c;
+  --background-elev-1: rgba(255,255,255, 0.05);
+  --background-elev-2: rgba(255,255,255, 0.10);
+  --text-color: white;
+  --color-link: #74b6f3;
+}
+.light {
+  --background-color: white;
+  --background-elev-1: rgba(0,0,0, 0.05);
+  --background-elev-2: rgba(0,0,0, 0.10);
+  --text-color: black;
+  --color-link: #2089ff;
+}
+
+/* ----- Layout ----- */
+/* report form */
+#report-form  {
+  display: flex;
+  flex-direction: row;
+}
+#report-form > div > form {
+  display: flex;
+  flex-direction: column;
+}
+.criminal {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+.mugshot-container > img {
+  width: 10rem;
+  padding-right: 1rem;
+}
+
+
+#App {
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+.panel {
+  background-color: var(--background-elev-1);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+h1,h2,h3,h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+input, button {
+  background-color: var(--background-elev-1);
+  color: var(--text-color);
+  border: 0;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+}
+input:hover, button:hover {
+  background-color: var(--background-elev-2);
+}
+
 #site-header {
   display: flex;
   flex-direction: row;

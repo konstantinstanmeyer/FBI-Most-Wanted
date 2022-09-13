@@ -6,7 +6,7 @@ import CriminalList from "./CriminalList";
 import ReportForm from './ReportForm';
 
 function App() {
-  const [isLightMode, setIsLightMode] = useState(false)
+  const [isLightMode, setIsLightMode] = useState(JSON.parse(localStorage.getItem("isLightMode")))
   const [criminalList, setCriminalList] = useState([])
 
   useEffect(() => {
@@ -14,10 +14,9 @@ function App() {
     fetch("http://localhost:3000/items")
       .then((response) => response.json())
       .then((data) => setCriminalList(data))
-      .then((error) => {
+      .catch((error) => {
         alert("Server is currently down.")
       });
-    setIsLightMode(!!localStorage.getItem("isLightMode"))
   }, []);
 
   useEffect(() => {
@@ -26,12 +25,12 @@ function App() {
 
   function handleAddSuspect(newSuspect){
     const updatedSuspectArray = [...criminalList, newSuspect];
-    setCriminalList(updatedSuspectArray)
+   setCriminalList(updatedSuspectArray)
   }
 
   return (
     <Router>
-      <div className={isLightMode? "light":"dark"}>
+      <div id="App" className={isLightMode? "light":"dark"}>
         <Header isLightMode={isLightMode} setIsLightMode={setIsLightMode}/>
 
         <Routes>
@@ -53,4 +52,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
