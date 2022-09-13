@@ -14,7 +14,7 @@ function App() {
     fetch("http://localhost:3000/items")
       .then((response) => response.json())
       .then((data) => setCriminalList(data))
-      .then((error) => {
+      .catch((error) => {
         alert("Server is currently down.")
       });
     setIsLightMode(!!localStorage.getItem("isLightMode"))
