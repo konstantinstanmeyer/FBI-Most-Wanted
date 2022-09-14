@@ -5,6 +5,7 @@ import Header from './Header';
 import CriminalList from "./CriminalList";
 import ReportForm from './ReportForm';
 import Home from './Home';
+import RockPaperScissor from './RockPaperScissor';
 
 
 function App() {
@@ -47,6 +48,10 @@ function App() {
             <Route path="/report" element={
               /* Form to add new members to the most wanted page */
               <ReportForm handleAddSuspect={handleAddSuspect}/>
+            }/>
+            <Route path="/rockPaperScissor" element={
+              /* Form to add new members to the most wanted page */
+              <RockPaperScissor />
             }/>
           </Routes>
         </div>
