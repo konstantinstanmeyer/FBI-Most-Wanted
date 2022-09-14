@@ -71,6 +71,8 @@ function RockPaperScissor(){
             case 'scissorsscissors':
                 setOutcome('DRAW')
                 break
+            default: // linter gets mad without a default case
+                break
         }
     }
 
