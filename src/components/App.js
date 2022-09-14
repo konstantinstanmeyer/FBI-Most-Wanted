@@ -6,6 +6,7 @@ import CriminalList from "./CriminalList";
 import ReportForm from './ReportForm';
 import Home from './Home';
 
+
 function App() {
   const [isLightMode, setIsLightMode] = useState(JSON.parse(localStorage.getItem("isLightMode")))
   const [criminalList, setCriminalList] = useState([])
@@ -34,7 +35,6 @@ function App() {
       <div id="App" className={isLightMode? "light":"dark"}>
         <div id="page">
           <Header isLightMode={isLightMode} setIsLightMode={setIsLightMode}/>
-
           <Routes>
             <Route path="/" element={
               /* Home Page */
@@ -50,6 +50,7 @@ function App() {
             }/>
           </Routes>
         </div>
+
       </div>
     </Router>
   );

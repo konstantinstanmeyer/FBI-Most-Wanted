@@ -1,7 +1,6 @@
 import React from "react";
 import Criminal from "./Criminal.js"
 
-
 function CriminalList({ criminalList }) {
 
     const displayCriminals = criminalList.map((criminal) => {

@@ -180,3 +180,44 @@ input:hover, button:hover {
 .snakeFailedButtons > button:hover {
   background: #222222;
 }
+
+/* ----- Layout ----- */
+/* home */
+#fbiBanner {
+  margin-right: 1rem
+}
+
+#seal {
+  margin-right: 1rem;
+}
+
+#sliderImage {
+  width: 100%;
+  height: 600px;
+  object-fit: contain;
+  }
+
+#select-menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 50px
+}
+
+#first {
+  width: 100%;
+  height: 600px;
+  object-fit: contain
+}
+
+#second {
+  width: 100%;
+  height: 600px;
+  object-fit: contain
+}
+
+#third {
+  width: 100%;
+  height: 600px;
+  object-fit: contain
+}
