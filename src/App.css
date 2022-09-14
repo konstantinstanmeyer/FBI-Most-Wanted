@@ -79,6 +79,7 @@ a {
 }
 .panel {
   background-color: var(--background-elev-1);
+  width: fit-content;
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -107,6 +108,77 @@ input:hover, button:hover {
 #user-controls > button > img {
   margin-left: auto;
   margin-right: auto;
+}
+
+
+/* ----- Snake Game Stuff ----- */
+#snakeGame {
+  position: relative;
+  margin: auto;
+  width: 30rem;
+  height: 30rem;
+  background: black;
+}
+.snaketile {
+  /* outline: darkgreen;
+  outline-width: 1rem;
+  outline-style: solid; */
+  position: absolute;
+}
+.snakepart {
+  width:1.5rem;
+  height:1.5rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  background: green;
+}
+.snakeapple {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: -0.25rem;
+  margin-left: -0.25rem;
+}
+/* Pixel Art Font for text overlays on games*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+#snakeTextOverlay {
+  font-family: "Press Start 2P";
+  text-align: center;
+  padding: 1rem;
+  color: white;
+}
+.snakeButton {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: white;
+  font-family: "Press Start 2P";
+  border-radius: 0px;
+  background: #1c1c1c;
+}
+.snakeBountyButton {
+  font-size: 2rem;
+  color: black;
+  background-image: url("./assets/money.png");
+  image-rendering: pixelated;
+  background-size: 20rem;
+  width: 20rem;
+  height: 8.4rem;
+}
+.snakeBountyButton:hover {
+  color: #222222;
+  background-size: calc(20rem*1.1);
+  width: calc(20rem*1.1);
+  height: calc(8.4rem*1.1);
+}
+.snakeFailedButtons {
+  display: flex;
+  flex-direction: row;
+}
+.snakeFailedButtons > button {
+  margin-left: auto;
+  margin-right: auto;
+}
+.snakeFailedButtons > button:hover {
+  background: #222222;
 }
 
 /* ----- Layout ----- */

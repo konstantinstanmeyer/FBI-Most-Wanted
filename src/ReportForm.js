@@ -3,30 +3,41 @@ import { v4 as uuidv4 } from 'uuid';
 import Criminal from "./components/Criminal"
 
 function ReportForm({ handleAddSuspect }){
-    const [alias, setAlias] = useState("")
-    const [reward, setReward] = useState("")
+    const [name, setName] = useState("")
+    const [bounty, setBounty] = useState(0)
+    const [mugshot, setMugshot] = useState("")
     const [crimeDesc, setCrimeDesc] = useState("")
     const [suspectDesc, setSuspectDesc] = useState("")
-    const [warning, setWarning] = useState("")
-    const [caution, setCaution] = useState("")
-    const [url, setUrl] = useState("")
+
+    const [formErrorText, setFormErrorText] = useState("")
 
     function handleSubmit(e){
         e.preventDefault();
+
+        if (name === "") {
+            setFormErrorText("Must have a name")
+            return;
+        }if (bounty < 1) {
+            setFormErrorText("Bounty must be greater than 1 dollar")
+            return;
+        }if (crimeDesc === "") {
+            setFormErrorText("Must have a crime description")
+            return;
+        }if (suspectDesc === "") {
+            setFormErrorText("Must have a suspect description")
+            return;
+        }
+        setFormErrorText("")
+
         fetch("http://localhost:3000/items", {
             method: "POST",
-            headers: {
-                "Content-Type" : "application/json",
-            },
+            headers: {"Content-Type" : "application/json"},
             body: JSON.stringify({
-                "aliases": [alias],
-                "description": suspectDesc,
-                "image": url,
-                "details": crimeDesc,
-                "warning": warning,
-                "reward": reward,
-                "caution": caution,
-                "id": uuidv4(),
+                name: name,
+                bounty: bounty,
+                crimeDesc: crimeDesc,
+                suspectDesc: suspectDesc,
+                mugshot: mugshot
             })
         })
         .then(r => r.json())
@@ -38,40 +49,33 @@ function ReportForm({ handleAddSuspect }){
             <div class="form-container">
                 <h2>Report A Crime</h2>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="alias" placeholder="Alias" 
-                        value={alias}
-                        onChange={(e) => setAlias(e.target.value)}
+                    <input type="text" name="name" placeholder="name or alias" 
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
-                    <input type="text" name="reward" placeholder="Reward"
-                        value={reward}
-                        onChange={(e) => setReward(e.target.value)}
+                    <input type="number" name="bounty" placeholder="Bounty"
+                        value={bounty}
+                        onChange={(e) => setBounty(parseInt(e.target.value))}
+                    />
+                    <textarea type="text" name="details" placeholder="Suspect Description"
+                        value={suspectDesc}
+                        onChange={(e) => setSuspectDesc(e.target.value)}
                     />
                     <textarea name="description" placeholder="Crime Description"
                         value={crimeDesc}
                         onChange={(e) => setCrimeDesc(e.target.value)}
                     />
-                    <input type="text" name="details" placeholder="Suspect Description"
-                        value={suspectDesc}
-                        onChange={(e) => setSuspectDesc(e.target.value)}
-                    />
-                    <input type="text" name="warning" placeholder="Warning Information"
-                        value={warning}
-                        onChange={(e) => setWarning(e.target.value)}
-                    />
-                    <input type="text" name="caution" placeholder="Caution Information"
-                        value={caution}
-                        onChange={(e) => setCaution(e.target.value)}
-                    />
-                    <input type="text" name="image" placeholder="Headshot URL"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
+                    <input type="text" name="image" placeholder="Mugshot URL"
+                        value={mugshot}
+                        onChange={(e) => setMugshot(e.target.value)}
                     />
                     <button type="submit">Submit Suspect</button>
                 </form>
+                <p style={{color:"red"}}>{formErrorText}</p>
             </div>
             <div id="form-preview">
                 <h2>Report Preview:</h2>
-                <Criminal criminal={{ aliases: [alias], description: suspectDesc, images: [{thumb:url}], details: crimeDesc, warning: warning, reward: reward, caution: caution}} />
+                <Criminal criminal={{ name: name, bounty: parseInt(bounty), crimeDesc: crimeDesc, suspectDesc: suspectDesc, mugshot: mugshot }} />
             </div>
         </div>
     )
