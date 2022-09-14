@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Snake from "./Snake";
 
-function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot } }) {  
+function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot }, yeetSelf, increaseBounty }) {  
   const [game, setGame] = useState(null)
 
   let parsedMugshot = mugshot;
@@ -27,9 +27,9 @@ function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot } 
         <div className="criminal-buttons">
           <button onClick={()=>{
             setGame( <Snake texture={parsedMugshot} suspectBounty={bounty} suspectName={name}
-                      success={()=>{/* remove this criminal from the database */}}
-                      failure={()=>{/* increase bounty by 1000 */}}
-                      close={()=>{/* close game */}}
+                      success={()=>{yeetSelf()}}
+                      failure={()=>{increaseBounty()}}
+                      close={()=>{setGame(null) }}
             />)}}>
             Hunt Bounty
           </button>

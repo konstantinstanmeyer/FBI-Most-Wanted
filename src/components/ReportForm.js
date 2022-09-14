@@ -37,8 +37,7 @@ function ReportForm({ handleAddSuspect }){
                 bounty: bounty,
                 crimeDesc: crimeDesc,
                 suspectDesc: suspectDesc,
-                mugshot: mugshot,
-                id: uuidv4(),
+                mugshot: mugshot
             })
         })
         .then(r => r.json())
@@ -56,7 +55,7 @@ function ReportForm({ handleAddSuspect }){
                     />
                     <input type="number" name="bounty" placeholder="Bounty"
                         value={bounty}
-                        onChange={(e) => setBounty(e.target.value)}
+                        onChange={(e) => setBounty(parseInt(e.target.value))}
                     />
                     <textarea type="text" name="details" placeholder="Suspect Description"
                         value={suspectDesc}
@@ -76,7 +75,7 @@ function ReportForm({ handleAddSuspect }){
             </div>
             <div id="form-preview">
                 <h2>Report Preview:</h2>
-                <Criminal criminal={{ name: name, bounty: bounty, crimeDesc: crimeDesc, suspectDesc: suspectDesc, mugshot: mugshot }} />
+                <Criminal criminal={{ name: name, bounty: parseInt(bounty), crimeDesc: crimeDesc, suspectDesc: suspectDesc, mugshot: mugshot }} />
             </div>
         </div>
     )

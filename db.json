@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "Sam Waters",
-      "bounty": "50000",
+      "bounty": 50000,
       "crimeDesc": "Leader of a technology-trade-school based cult that has partook in multiple genocides and burnt down several hospitals. Former professional wrestler.",
       "suspectDesc": "Midnight Lips, Daydream Eyes, Hair like the fire that burns in his heart. ~1000 pounds (very dense proceed with caution)",
       "mugshot": "https://i.imgur.com/F1TJkiX.png",
@@ -10,7 +10,7 @@
     },
     {
       "name": "Chris Gardner",
-      "bounty": "10000",
+      "bounty": 10000,
       "crimeDesc": "Alleged participation in a wire fraud scheme and the transportation of a stolen motor vehicle in foreign commerce",
       "suspectDesc": "Male, ~175 pounds, may have scars on the left side of his chin and on his left forearm.",
       "mugshot": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Cristian Mora",
-      "bounty": "5000",
+      "bounty": 5000,
       "crimeDesc": "Conspiring to possess and distribute over 50 grams of methamphetamine in Northern California from September of 2020 to March of 2021.  A federal arrest warrant was issued for Mora in the United States District Court, Northern District of California, San Francisco, California, on August 25, 2021, after he was charged with Conspiracy to Distribute and Possess with Intent to Distribute Methamphetamine.",
       "suspectDesc": "Male, hispanic, black hair, brown eyes, ~210 pounds",
       "mugshot": "https://www.fbi.gov/wanted/cei/cristian-rios-mora/mora1.jpg",
@@ -26,7 +26,7 @@
     },
     {
       "name": "James Von Kirk",
-      "bounty": "10000",
+      "bounty": 10000,
       "crimeDesc": "Series of rapes involving a young girl in Fort Smith, Arkansas.",
       "suspectDesc": "Male, Hispanic, black hair, ~150 pounds, has a scar on his left cheek near his mouth.",
       "mugshot": "https://www.fbi.gov/wanted/cac/jose-antonio-barroso/barroso2.jpg",
@@ -34,7 +34,7 @@
     },
     {
       "name": "Igor Dehtyarchuk",
-      "bounty": "150000",
+      "bounty": 150000,
       "crimeDesc": "Operating a cyber-criminal marketplace that sold thousands of login credentials, personally identifiable information, and authentication tools that allowed transnational organized crime and other cyber criminals to unlawfully access the online accounts of victims located around the world.",
       "suspectDesc": "Male, Russian, Brown Hair, previously a student at Ural State University in Yekaterinburg, Russia, last known to reside in Kamensk-Uralsky, Sverdlovsk Oblast, Russia.",
       "mugshot": "",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Seva Moguilevich",
-      "bounty": "5000000",
+      "bounty": 5000000,
       "crimeDesc": "Fraud by Wire; RICO Conspiracy; Mail Fraud; Money Laundering Conspiracy; Money Laundering; Aiding and Abetting; Securities Fraud; Filing False Registration With the SEC; False Filings With the SEC; Falsification of Books and Records",
       "suspectDesc": "Male, Heavy Build, gray hair, Ukrainian, pockmarks on his face.",
       "mugshot": "https://www.fbi.gov/wanted/cei/semion-mogilevich/mogilevich2.png",

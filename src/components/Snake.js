@@ -22,6 +22,8 @@ function Snake({texture, suspectBounty, suspectName, success, failure, close}) {
     const [snake, setSnake] = useState([{x:parseInt(GameSize/2), y:parseInt(GameSize/2)}])
     const [apple, setApple] = useState({x:rand(GameSize), y:rand(GameSize)})
     const [score, setScore] = useState(0)
+
+    const [dispBounty, setDispBounty] = useState(suspectBounty)
     
     const [gameState, setGameState] = useState("play")
 
@@ -122,6 +124,7 @@ function Snake({texture, suspectBounty, suspectName, success, failure, close}) {
                 for (let i = 0; i < snake.length-1; i++) {
                     if (headPos.x === snake[i].x && headPos.y === snake[i].y) {
                         setGameState("die") // die
+                        setDispBounty(dispBounty+1000)
                         failure()
                     }
                 }
@@ -181,7 +184,7 @@ function Snake({texture, suspectBounty, suspectName, success, failure, close}) {
 
     return (
         <div className="panel">
-            <h1>Hunting {suspectName} for a bounty of ${suspectBounty}</h1>
+            <h1>Hunting {suspectName} for a bounty of ${dispBounty}</h1>
             <p><strong>How To Play:</strong> use WASD or the arrow keys to change the direction the snake moves, eat apples to expand, win on eating 7 apples, dont hit yourself </p>
             <h2>Score: {score}</h2>
             <div id="snakeGame">

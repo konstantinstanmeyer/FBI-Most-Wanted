@@ -42,7 +42,7 @@ function App() {
             }/>
             <Route path="/search" element={
               /* "Most Wanted" page, search bar and a couple filters to browse the database */
-              <CriminalList criminalList={criminalList} />
+              <CriminalList criminalList={criminalList} setCriminalList={setCriminalList}/>
             }/>
             <Route path="/report" element={
               /* Form to add new members to the most wanted page */
