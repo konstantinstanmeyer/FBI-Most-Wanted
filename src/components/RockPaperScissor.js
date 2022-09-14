@@ -16,7 +16,7 @@ function RockPaperScissor(){
         fetch("http://localhost:3000/items")
         .then(r => r.json())
         .then(data => {
-            setCriminal(data[Math.floor(Math.random() * (41))])
+            setCriminal(data[Math.floor(Math.random() * (data.length()))])
         })
     }, [])
     //sets both choices to 
@@ -78,13 +78,13 @@ function RockPaperScissor(){
         <div className="rps-container panel">
             <div id="player-cards">
                 <div className="enemy-card panel cardski">
-                    <h5>Suspect: </h5>
-                    <p>{criminal.title}</p>
+                    <h5 className="h5s">Suspect: </h5>
+                    <p>{criminal.name}</p>
                     <p><strong>STATUS: </strong>ARMED AND DANGEROUS</p>
                     <img id="enemy-pic" src="https://images.pexels.com/photos/7785057/pexels-photo-7785057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
                 </div>
                 <div className="user-card panel cardski">
-                    <h5 id="good-title">Server of Justice: </h5>
+                    <h5 className="h5s" id="good-title">Server of Justice: </h5>
                     <p><strong>STATUS: </strong>dashing, strong, single, dog-lover</p>
                     <img id="detective-pic" src="https://images.pexels.com/photos/7319346/pexels-photo-7319346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
                 </div>
