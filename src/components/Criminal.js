@@ -18,7 +18,7 @@ function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot } 
       <div>
         <div className="detail-container">
           <h3><strong>Suspect: </strong> {name}</h3>
-          <h3>${bounty} bounty</h3>
+          <h3>${(parseInt(bounty)).toLocaleString('en-US', {useGrouping: true})} bounty</h3>
           <p><strong>Description of Suspect: </strong>{suspectDesc}</p>
           <br/>
           <p><strong>Description of Crime: </strong>{crimeDesc}</p>
