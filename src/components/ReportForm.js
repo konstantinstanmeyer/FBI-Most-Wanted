@@ -75,7 +75,7 @@ function ReportForm({ handleAddSuspect }){
             </div>
             <div id="form-preview">
                 <h2>Report Preview:</h2>
-                <Criminal criminal={{ name: name, bounty: parseInt(bounty), crimeDesc: crimeDesc, suspectDesc: suspectDesc, mugshot: mugshot }} />
+                <Criminal criminal={{ name: name, bounty: parseInt(bounty), crimeDesc: crimeDesc, suspectDesc: suspectDesc, mugshot: mugshot }} hideHuntBounty="true"/>
             </div>
         </div>
     )
