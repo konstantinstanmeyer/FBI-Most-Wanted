@@ -1,12 +1,25 @@
 import React, { useState } from "react";
 import Snake from "./Snake";
 
-function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot }, yeetSelf, increaseBounty }) {  
+function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot }, yeetSelf, increaseBounty, hideHuntBounty }) {  
   const [game, setGame] = useState(null)
 
   let parsedMugshot = mugshot;
   if (mugshot === "") {
     parsedMugshot = "https://cdn.modrinth.com/placeholder.svg"
+  }
+  
+
+  let huntBountyButton;
+  if (hideHuntBounty === undefined) {
+    huntBountyButton = (<button onClick={()=>{
+        setGame( <Snake texture={parsedMugshot} suspectBounty={bounty} suspectName={name}
+                  success={()=>{yeetSelf()}}
+                  failure={()=>{increaseBounty()}}
+                  close={()=>{setGame(null) }}
+        />)}}>
+        Hunt Bounty
+      </button>)
   }
 
   return (
@@ -25,14 +38,7 @@ function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot },
         </div>
 
         <div className="criminal-buttons">
-          <button onClick={()=>{
-            setGame( <Snake texture={parsedMugshot} suspectBounty={bounty} suspectName={name}
-                      success={()=>{yeetSelf()}}
-                      failure={()=>{increaseBounty()}}
-                      close={()=>{setGame(null) }}
-            />)}}>
-            Hunt Bounty
-          </button>
+          {huntBountyButton}
         </div>
         {game}
       </div>

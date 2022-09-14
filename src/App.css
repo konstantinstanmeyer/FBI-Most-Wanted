@@ -183,9 +183,17 @@ input:hover, button:hover {
 
 /* ----- Layout ----- */
 /* home */
-
-#select-menu {
+.home {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
 }
-
+.image-slider {
+  min-width: 0px;
+}
+.alice-carousel__prev-btn span, .alice-carousel__next-btn span {
+  font-size: 2rem;
+} 
+.sidebar {
+  margin-left: 1rem;
+  text-align: center;
+}
