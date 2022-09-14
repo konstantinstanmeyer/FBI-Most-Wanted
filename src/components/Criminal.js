@@ -1,5 +1,4 @@
 import React from "react";
-import '../Criminal.css';
 
 function Criminal({ criminal: { aliases, description, images, details, warning, reward, caution } }) {
   let aliasesNode;

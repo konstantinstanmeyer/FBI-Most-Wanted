@@ -1,6 +1,6 @@
 import React from "react";
 import Criminal from "./Criminal.js"
-import '../CriminalList.css';
+
 
 
 function CriminalList({ criminalList }) {
