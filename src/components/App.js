@@ -38,7 +38,7 @@ function App() {
           <Routes>
             <Route path="/" element={
               /* Home Page */
-              <Home/>
+              <Home isLightMode={isLightMode}/>
             }/>
             <Route path="/search" element={
               /* "Most Wanted" page, search bar and a couple filters to browse the database */

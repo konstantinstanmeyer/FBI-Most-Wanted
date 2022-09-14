@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
-import Criminal from "./Criminal"
+import Criminal from "./components/Criminal"
 
 function ReportForm({ handleAddSuspect }){
     const [alias, setAlias] = useState("")
