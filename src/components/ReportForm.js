@@ -19,7 +19,7 @@ function ReportForm({ handleAddSuspect }){
                 "Content-Type" : "application/json",
             },
             body: JSON.stringify({
-                "aliases": alias,
+                "aliases": [alias],
                 "description": suspectDesc,
                 "image": url,
                 "details": crimeDesc,
@@ -35,7 +35,7 @@ function ReportForm({ handleAddSuspect }){
 
     return(
         <div id="report-form">
-            <div>
+            <div class="form-container">
                 <h2>Report A Crime</h2>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="alias" placeholder="Alias" 
@@ -46,7 +46,7 @@ function ReportForm({ handleAddSuspect }){
                         value={reward}
                         onChange={(e) => setReward(e.target.value)}
                     />
-                    <input type="text" name="description" placeholder="Crime Description"
+                    <textarea name="description" placeholder="Crime Description"
                         value={crimeDesc}
                         onChange={(e) => setCrimeDesc(e.target.value)}
                     />
@@ -69,9 +69,9 @@ function ReportForm({ handleAddSuspect }){
                     <button type="submit">Submit Suspect</button>
                 </form>
             </div>
-            <div>
+            <div id="form-preview">
                 <h2>Report Preview:</h2>
-                <Criminal criminal={{ aliases: alias, description: suspectDesc, image: url, details: crimeDesc, warning: warning, reward: reward, caution: caution}} />
+                <Criminal criminal={{ aliases: [alias], description: suspectDesc, images: [{thumb:url}], details: crimeDesc, warning: warning, reward: reward, caution: caution}} />
             </div>
         </div>
     )

@@ -25,13 +25,14 @@ function Criminal({ criminal: { aliases, description, images, details, warning, 
 
       <div>
         {aliasesNode}
-        <h1>{warning}</h1>
-        <h1>{reward}</h1>
-        <h4 className="detail-container">
+        <h3>WARNING: {warning}</h3>
+        <p>{caution}</p>
+        <br/>
+        <h3>{reward} reward</h3>
 
+        <h4 className="detail-container">
           <p>Description: {description}</p>
           <p>{details}</p>
-          <p>{caution}</p>
         </h4>
       </div>
 
