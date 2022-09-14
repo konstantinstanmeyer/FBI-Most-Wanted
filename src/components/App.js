@@ -46,7 +46,7 @@ function App() {
             }/>
             <Route path="/report" element={
               /* Form to add new members to the most wanted page */
-              <ReportForm onAddSuspect={handleAddSuspect}/>
+              <ReportForm handleAddSuspect={handleAddSuspect}/>
             }/>
           </Routes>
         </div>
