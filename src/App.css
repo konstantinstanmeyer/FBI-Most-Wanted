@@ -69,7 +69,10 @@
 }
 .mugshot-container > img {
   width: 10rem;
-  padding-right: 1rem;
+  height: 10rem;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 1rem;
 }
 
 
