@@ -1,7 +1,9 @@
-import React from "react";
-import '../Criminal.css';
+import React, { useState } from "react";
+import Snake from "./Snake";
 
-function Criminal({ criminal: { aliases, description, images, details, warning, reward, caution } }) {
+function Criminal({ criminal: { aliases, description, images, details, warning, reward, caution } }) {  
+  const [game, setGame] = useState(null)
+
   let aliasesNode;
   if (aliases !== null) {
     aliasesNode = (
@@ -35,6 +37,18 @@ function Criminal({ criminal: { aliases, description, images, details, warning, 
           <p>Description: {description}</p>
           <p>{details}</p>
         </h4>
+
+        <div className="criminal-buttons">
+          <button onClick={()=>{
+            setGame( <Snake texture="mugshot" suspectBounty="1000" suspectName="Name"
+                      success={()=>{/* remove this criminal from the database */}}
+                      failure={()=>{/* increase bounty by 1000 */}}
+                      close={()=>{/* close game */}}
+            />)}}>
+            Hunt Bounty
+          </button>
+        </div>
+        {game}
       </div>
 
     </div>
