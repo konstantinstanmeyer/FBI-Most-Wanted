@@ -13,6 +13,9 @@ function Nav() {
         <li>
           <Link to="/report">Report</Link>
         </li>
+        <li>
+          <Link to="/ticTacToe">TicTacToe</Link>
+        </li>
       </ul>
     </nav>
   )

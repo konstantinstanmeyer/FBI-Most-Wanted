@@ -1,0 +1,118 @@
+.rps-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#enemy-pic {
+    height: 200px;
+    display: cover;
+}
+
+#detective-pic{
+    height: 200px;
+    display: cover;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    bottom: 0px;
+    margin-top: 1rem;
+}
+
+#player-cards {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-right: 10px;
+}
+
+.enemy-card {
+    padding-top: 0px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+h5{
+    padding: 0px 0px 0px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#good-title{
+    padding: 0px 0px 0px;
+    margin-top: 0px;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.main-content-stuff{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.instruction-stuff {
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
+
+.instructions-text{
+    margin-top: 0px;
+}
+
+.buttons {
+    width: 33%;
+    font-size: 1rem;
+}
+
+.gameboard {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 0px 0px;
+
+}
+
+.enemy-hand {
+    height: 150px;
+    width: 112px;
+    display: cover;
+    transform: rotate(180deg);
+    margin-bottom: auto;
+}
+
+.user-hand{
+    height: 150px;
+    width: 112px;
+    display: cover;
+    bottom: 0px;
+    margin-top: auto;
+}
+
+
+.move-user {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 200px;
+}
+
+.move-enemy{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 250px;
+}
+
+img[src=""]{
+    display: none;
+}
