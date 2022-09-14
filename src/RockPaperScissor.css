@@ -48,10 +48,6 @@ h5{
     margin-top: 0px;
 }
 
-h2 {
-    text-decoration: underline;
-}
-
 .main-content-stuff{
     display: flex;
     flex-direction: column;
