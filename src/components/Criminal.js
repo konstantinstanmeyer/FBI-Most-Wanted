@@ -1,40 +1,46 @@
-import React from "react";
-import '../Criminal.css';
+import React, { useState } from "react";
+import Snake from "./Snake";
 
-function Criminal({ criminal: { aliases, description, images, details, warning, reward, caution } }) {
-  let aliasesNode;
-  if (aliases !== null) {
-    aliasesNode = (
-      <h3>{("Suspect" + aliases.length>1? "Aliases: " : "Alias: ") + aliases.map((alias)=>" " + alias) }</h3>
-    ) 
-  } else {
-    aliasesNode = (
-      <h3>Unknown Suspect</h3>
-    )
+function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot }, yeetSelf, increaseBounty, hideHuntBounty }) {  
+  const [game, setGame] = useState(null)
+
+  let parsedMugshot = mugshot;
+  if (mugshot === "") {
+    parsedMugshot = "https://cdn.modrinth.com/placeholder.svg"
   }
+  
 
-  let mugshot;
-  if (images !== undefined) {
-    mugshot = images[0].thumb
+  let huntBountyButton;
+  if (hideHuntBounty === undefined) {
+    huntBountyButton = (<button onClick={()=>{
+        setGame( <Snake texture={parsedMugshot} suspectBounty={bounty} suspectName={name}
+                  success={()=>{yeetSelf()}}
+                  failure={()=>{increaseBounty()}}
+                  close={()=>{setGame(null) }}
+        />)}}>
+        Hunt Bounty
+      </button>)
   }
 
   return (
     <div className="criminal panel">
       <div className="mugshot-container">
-        <img src={mugshot} alt={aliases} />
+        <img src={parsedMugshot} alt={`${name}`}/>
       </div>
 
       <div>
-        {aliasesNode}
-        <h3>WARNING: {warning}</h3>
-        <p>{caution}</p>
-        <br/>
-        <h3>{reward} reward</h3>
+        <div className="detail-container">
+          <h3><strong>Suspect: </strong> {name}</h3>
+          <h3>${(parseInt(bounty)).toLocaleString('en-US', {useGrouping: true})} bounty</h3>
+          <p><strong>Description of Suspect: </strong>{suspectDesc}</p>
+          <br/>
+          <p><strong>Description of Crime: </strong>{crimeDesc}</p>
+        </div>
 
-        <h4 className="detail-container">
-          <p>Description: {description}</p>
-          <p>{details}</p>
-        </h4>
+        <div className="criminal-buttons">
+          {huntBountyButton}
+        </div>
+        {game}
       </div>
 
     </div>

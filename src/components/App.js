@@ -7,6 +7,7 @@ import ReportForm from './ReportForm';
 import Home from './Home';
 import RockPaperScissor from './RockPaperScissor';
 
+
 function App() {
   const [isLightMode, setIsLightMode] = useState(JSON.parse(localStorage.getItem("isLightMode")))
   const [criminalList, setCriminalList] = useState([])
@@ -35,19 +36,18 @@ function App() {
       <div id="App" className={isLightMode? "light":"dark"}>
         <div id="page">
           <Header isLightMode={isLightMode} setIsLightMode={setIsLightMode}/>
-
           <Routes>
             <Route path="/" element={
               /* Home Page */
-              <Home/>
+              <Home isLightMode={isLightMode}/>
             }/>
             <Route path="/search" element={
               /* "Most Wanted" page, search bar and a couple filters to browse the database */
-              <CriminalList criminalList={criminalList} />
+              <CriminalList criminalList={criminalList} setCriminalList={setCriminalList}/>
             }/>
             <Route path="/report" element={
               /* Form to add new members to the most wanted page */
-              <ReportForm onAddSuspect={handleAddSuspect}/>
+              <ReportForm handleAddSuspect={handleAddSuspect}/>
             }/>
             <Route path="/rockPaperScissor" element={
               /* Form to add new members to the most wanted page */
@@ -55,6 +55,7 @@ function App() {
             }/>
           </Routes>
         </div>
+
       </div>
     </Router>
   );

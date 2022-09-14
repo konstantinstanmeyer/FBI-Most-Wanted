@@ -1,20 +1,41 @@
-function Home() {
-    // https://openbase.com/js/swiper/documentation
-    return (
-        <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-        </div>
-        <div class="swiper-pagination"></div>
+import React, { useState, useEffect } from "react"
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
+import Criminal from "./Criminal";
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+import fbi_seal from "../assets/fbi_seal.png";
 
-        <div class="swiper-scrollbar"></div>
+function Home({ isLightMode }) {
+  const [suspectList, setSuspectList] = useState([])
+
+  useEffect(() => {
+    // fetch criminals from database
+    fetch("http://localhost:3000/items")
+      .then((response) => response.json())
+      .then((data) => setSuspectList(data))
+      .catch((error) => {
+        alert("Server is currently down.")
+      });
+  }, []);
+
+  const displayCards = suspectList.map((suspect) => <Criminal className="homeCriminal" criminal={suspect} hideHuntBounty="true"/>)
+  return (
+    <div className="home">
+      <div className="image-slider panel">
+        <AliceCarousel autoPlay autoPlayInterval={3000} infinite items={displayCards}  keyboardNavigation disableDotsControls >
+        </AliceCarousel>
+      </div>
+      <div className="sidebar panel">
+        <div className="fbiBanner"> <h2>FBI's Most Wanted</h2> </div>
+        <div className="slogan"> <h3>JUSTICE NEVER SLEEPS<br/>AND IT NEEDS YOUR HELP</h3> </div>
+        <div className="seal">
+          <img style={{ width: "15rem" }} src={fbi_seal} alt="fbi seal"/>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default Home
+
+
