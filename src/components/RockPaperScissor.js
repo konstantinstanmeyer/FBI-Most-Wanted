@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../RockPaperScissor.css";
+import ScoreCounter from "./ScoreCounter";
 
 function RockPaperScissor(){
     //setting values
@@ -15,8 +16,8 @@ function RockPaperScissor(){
     useEffect(() => {
         fetch("http://localhost:3000/items")
         .then(r => r.json())
-        .then(data => {            
-            setCriminal(data[Math.floor(Math.random() * (7))])
+        .then(data => {
+            setCriminal(data[Math.floor(Math.random() * (data.length))])
         })
     }, [])
 
@@ -114,12 +115,16 @@ function RockPaperScissor(){
                         You've been assigned a dangerous case, and you've caught the suspect, put them in handcuffs, but there's one more step: beat them in a game of rock, paper, scissors, or else YOU might end up in the backseat of a cop car.
                     </p>
                 </div>
-                <div className="gameboard panel">
-                    <img className="enemy-hand" src="https://www.freeiconspng.com/uploads/hands-png-hand-image-photo-35.png"/>
-                    <img className="move-enemy" src={enemyPic}/>
-                    <h1>{outcome}</h1>
-                    <img className="move-user" src={userPic}/>
-                    <img className ="user-hand" src="https://www.freeiconspng.com/uploads/hands-png-hand-image-photo-35.png"/>
+                <div className="gameboard-container">
+                    <ScoreCounter isRed={false} points={3}/>
+                    <div className="gameboard panel">
+                        <img className="enemy-hand" src="https://www.freeiconspng.com/uploads/hands-png-hand-image-photo-35.png"/>
+                        <img className="move-enemy" src={enemyPic}/>
+                        <h1>{outcome}</h1>
+                        <img className="move-user" src={userPic}/>
+                        <img className ="user-hand" src="https://www.freeiconspng.com/uploads/hands-png-hand-image-photo-35.png"/>
+                    </div>
+                    <ScoreCounter isRed={true} points={1}/>
                 </div>
                 <div className="button-container panel">
                     <button className="buttons" onClick={() => handleChoice("rock")}>Rock</button>
