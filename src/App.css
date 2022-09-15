@@ -205,7 +205,7 @@ input:hover, button:hover {
 .banner {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  position: fixed;
   left: 0rem;
   right: 0rem;
   bottom: 0rem;
@@ -224,11 +224,35 @@ input:hover, button:hover {
   height:10rem;
   padding:0px
 }
+
+@media (max-width: 1490px) {
+  .justiceBlind {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    scale: .4;
+    left: -4rem;
+    top: 0rem;
+    bottom: 36rem;
+  }
+  .justiceBlind2 {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    scale: .4;
+    right: -1.9rem;
+    top: 0rem;
+    bottom: 36rem;
+  }
+}
+
+
+@media (min-width: 1490px) {
 .justiceBlind {
   display: flex;
   flex-direction: column;
   position: fixed;
-  scale: .5;
+  scale: .48;
   left: -4rem;
   top: 0rem;
   bottom: 36rem;
@@ -237,10 +261,11 @@ input:hover, button:hover {
   display: flex;
   flex-direction: column;
   position: fixed;
-  scale: .5;
+  scale: .48;
   right: -1.9rem;
   top: 0rem;
   bottom: 36rem;
+}
 }
 
 .hidden {

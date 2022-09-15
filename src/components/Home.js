@@ -35,7 +35,7 @@ function Home({ isLightMode }) {
         <div className="seal">
           <img style={{ width: "15rem" }} src={fbi_seal} alt="fbi seal"/>
         </div>
-        <p>The Federal Bureau of Investigation needs your help to catch, kill or otherwise render inoperable these various threats to freedom.</p>
+        <p>The Federal Bureau of Investigation needs your help to catch these threats to freedom!</p>
       </div>
         <div className="justiceBlind">
           <div className="sidebar panel">
