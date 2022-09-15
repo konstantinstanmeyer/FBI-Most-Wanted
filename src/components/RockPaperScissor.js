@@ -9,7 +9,7 @@ function RockPaperScissor(){
     const [criminal, setCriminal] = useState([])
     const [userPic, setUserPic] = useState("")
     const [enemyPic, setEnemyPic] = useState("")
-    const choices = ["rock", "paper", "scissors"];
+    const choices = ["rock", "paper", "scissors"]
 
     //fetching data
     useEffect(() => {
@@ -19,6 +19,17 @@ function RockPaperScissor(){
             setCriminal(data[Math.floor(Math.random() * (7))])
         })
     }, [])
+
+    //setting user score
+    function handleUserScore(newScore){
+        setUserScore(newScore)
+    }
+
+    //setting enemy score
+    function handleEnemyScore(newScore){
+        setEnemyScore(newScore)
+    }
+
     //sets both choices to state
     function handleChoice(choice){
         setUserMove(choice);
