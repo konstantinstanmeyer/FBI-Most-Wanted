@@ -287,3 +287,20 @@ input:hover, button:hover {
   flex-direction: row;
   height: 100%;
 }
+
+.seal {
+  -webkit-animation: filter-animation 5s infinite;
+  animation: filter-animation 5s infinite;
+}
+
+@-webkit-keyframes filter-animation {
+  0% {-webkit-filter: hue-rotate(0deg);}
+  50% {-webkit-filter: hue-rotate(360deg);}
+  100% {-webkit-filter: hue-rotate(0deg);}
+}
+
+@keyframes filter-animation {
+  0% {filter: hue-rotate(0deg);}
+  50% {filter: hue-rotate(360deg);}
+  100% {filter: hue-rotate(0deg);}
+}
