@@ -15,25 +15,25 @@ function RockPaperScissor(){
     useEffect(() => {
         fetch("http://localhost:3000/items")
         .then(r => r.json())
-        .then(data => {
-            setCriminal(data[Math.floor(Math.random() * (data.length()))])
+        .then(data => {            
+            setCriminal(data[Math.floor(Math.random() * (6))])
         })
     }, [])
-    //sets both choices to 
+    //sets both choices to state
     function handleChoice(choice){
         setUserMove(choice);
         computerChoice();
     }
-
+    //updates computer move state with a random choice
     function computerChoice(){
         const randomChoice = choices[Math.floor(Math.random() * choices.length)];
         setComputerMove(randomChoice);
     }
-    
+    //determining the outcome of the turns
     useEffect(() => {
         whoWins();
     }, [computerMove, userMove])
-
+    //handles which picture to show for user depending on which button was clicked
     useEffect(() => {
         if(userMove === 'scissors'){
             setUserPic("https://www.freeiconspng.com/uploads/scissors-icon-6.png")
@@ -43,7 +43,7 @@ function RockPaperScissor(){
             setUserPic("https://www.freeiconspng.com/uploads/rock-icon-11.png")
         }
     }, [userMove])
-
+    //handles which picture to show for the enemy depending on which move was done
     useEffect(() => {
         if(computerMove === 'scissors'){
             setEnemyPic("https://www.freeiconspng.com/uploads/scissors-icon-6.png")
@@ -53,7 +53,7 @@ function RockPaperScissor(){
             setEnemyPic("https://www.freeiconspng.com/uploads/rock-icon-11.png")
         }
     }, [computerMove])
-
+    //determinges the outcomes
     function whoWins(){
         switch(userMove + computerMove){
             case 'scissorspaper':
@@ -76,6 +76,11 @@ function RockPaperScissor(){
         }
     }
 
+    let parsedMugshot = criminal.mugshot;
+    if (criminal.mugshot === "") {
+        parsedMugshot = "https://cdn.modrinth.com/placeholder.svg"
+    }
+    //html
     return(
         <div className="rps-container panel">
             <div id="player-cards">
@@ -83,17 +88,15 @@ function RockPaperScissor(){
                     <h5 className="h5s">Suspect: </h5>
                     <p>{criminal.name}</p>
                     <p><strong>STATUS: </strong>ARMED AND DANGEROUS</p>
-                    <img id="enemy-pic" src="https://images.pexels.com/photos/7785057/pexels-photo-7785057.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
+                    <img id="enemy-pic" src={parsedMugshot}/>
                 </div>
                 <div className="user-card panel cardski">
-                    <h5 className="h5s" id="good-title">Server of Justice: </h5>
+                    <h5 className="h5s" id="good-title">Server of Justice(YOU): </h5>
                     <p><strong>STATUS: </strong>dashing, strong, single, dog-lover</p>
                     <img id="detective-pic" src="https://images.pexels.com/photos/7319346/pexels-photo-7319346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
                 </div>
             </div>
             <div className="main-content-stuff panel">
-                {/* <h2>User Choice Is: {userMove}</h2>
-                <h2>Computer Choice Is: {computerMove}</h2>  */}
                 <div id="instructions" className="instruction-stuff panel">
                     <h2 className="instructions-text">Instructions: </h2>
                     <p>

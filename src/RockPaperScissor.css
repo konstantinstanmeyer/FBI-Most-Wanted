@@ -4,13 +4,15 @@
 }
 
 #enemy-pic {
-    height: 200px;
     display: cover;
+    width: 150px;
+    border-radius: 1rem;
 }
 
 #detective-pic{
     height: 200px;
     display: cover;
+    border-radius: 1rem;
 }
 
 .button-container{
@@ -18,7 +20,7 @@
     flex-direction: row;
     bottom: 0px;
     margin-top: 1rem;
-    width: 100%;
+    width: calc(100% - 2rem);
 }
 
 #player-cards {
