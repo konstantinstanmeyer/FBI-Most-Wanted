@@ -47,6 +47,14 @@
       "suspectDesc": "Male, Heavy Build, gray hair, Ukrainian, pockmarks on his face.",
       "mugshot": "https://www.fbi.gov/wanted/cei/semion-mogilevich/mogilevich2.png",
       "id": "563c93d7-4ddd-4b43-8575-740ecf97e6ed"
+    },
+    {
+      "name": "Марат Валерьевич Тюков",
+      "bounty": 100000,
+      "crimeDesc": "Conspiracy to Commit Computer Intrusions; Conspiracy to Commit Wire Fraud; Wire Fraud; Computer Fraud – Unauthorized Access to Obtain Information from Protected Computers; Aggravated Identity Theft; Aiding and Abetting",
+      "suspectDesc": "Balding, Sandy Blond or Light Brown",
+      "mugshot": "https://www.fbi.gov/wanted/cyber/marat-valeryevich-tyukov/@@images/image",
+      "id": "6f59ed3f0c1d48f8b0bd35611e3d405d"
     }
   ]
 }
