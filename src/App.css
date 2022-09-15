@@ -204,3 +204,18 @@ input:hover, button:hover {
 .hidden {
   display: none;
 }
+
+.scorecounter {
+  display: flex;
+  flex-direction: column;
+}
+.rps-circle {
+  margin: auto 0rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+.gameboard-container {
+  display: flex;
+  flex-direction: row;
+}
