@@ -14,6 +14,7 @@ function Header({isLightMode, setIsLightMode}) {
                     <Link to="/">Home</Link>
                     <Link to="/search">Most Wanted</Link>
                     <Link to="/report">Report</Link>
+                    <Link to="/rockPaperScissor">Rock-Paper-Scissor</Link>
                 </nav>
             </div>
 
