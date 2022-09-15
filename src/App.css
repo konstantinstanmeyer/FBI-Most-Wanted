@@ -195,8 +195,12 @@ input:hover, button:hover {
 }
 .alice-carousel__prev-btn span, .alice-carousel__next-btn span {
   font-size: 2rem;
-} 
+}
 .sidebar {
   margin-left: 1rem;
   text-align: center;
+}
+
+.hidden {
+  display: none;
 }

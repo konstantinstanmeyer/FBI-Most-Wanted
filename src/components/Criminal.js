@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 import Snake from "./Snake";
 
-function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot }, yeetSelf, increaseBounty, hideHuntBounty }) {  
+function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot, id }, yeetSelf, increaseBounty, hideHuntBounty }) {
   const [game, setGame] = useState(null)
 
   let parsedMugshot = mugshot;
   if (mugshot === "") {
     parsedMugshot = "https://cdn.modrinth.com/placeholder.svg"
   }
-  
+
 
   let huntBountyButton;
-  if (hideHuntBounty === undefined) {
-    huntBountyButton = (<button onClick={()=>{
-        setGame( <Snake texture={parsedMugshot} suspectBounty={bounty} suspectName={name}
-                  success={()=>{yeetSelf()}}
-                  failure={()=>{increaseBounty()}}
-                  close={()=>{setGame(null) }}
-        />)}}>
-        Hunt Bounty
-      </button>)
-  }
+  huntBountyButton = (<button onClick={()=>{
+      setGame( <Snake texture={parsedMugshot} suspectBounty={bounty} suspectName={name}
+                success={()=>{yeetSelf()}}
+                failure={()=>{increaseBounty()}}
+                close={()=>{setGame(null) }}
+      />)}}>
+      Hunt Bounty
+    </button>)
 
   return (
     <div className="criminal panel">
@@ -37,8 +35,13 @@ function Criminal({ criminal: { name, bounty, crimeDesc, suspectDesc, mugshot },
           <p><strong>Description of Crime: </strong>{crimeDesc}</p>
         </div>
 
-        <div className="criminal-buttons">
+        <div className={"criminal-buttons" + (hideHuntBounty === undefined? "" : " hidden")}>
           {huntBountyButton}
+          <a href={`/rockPaperScissor?=${id}`}>
+            <button>
+              get ready to <strong>RUMBLE</strong>
+            </button>
+          </a>
         </div>
         {game}
       </div>
