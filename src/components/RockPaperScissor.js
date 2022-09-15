@@ -22,12 +22,22 @@ function RockPaperScissor(){
 
     //fetching data
     useEffect(() => {
-        fetch("http://localhost:3000/items")
+        fetch("http://localhost:3000/items/" + window.location.search.slice(2))
         .then(r => r.json())
         .then(data => {
-            setCriminal(data[Math.floor(Math.random() * (data.length))])
+            setCriminal(data)
         })
     }, []);
+
+    useEffect(()=> {
+        fetch(`http://localhost:3000/items/${criminal.id}`,{
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then((data) => {
+            data.filter((item) => item.id !== criminal.id)
+        })
+    }, [winText])
 
     //sets both choices to state
     function handleChoice(choice){
