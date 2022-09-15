@@ -192,6 +192,7 @@ input:hover, button:hover {
 }
 .image-slider {
   min-width: 0px;
+  max-height: 22rem
 }
 .alice-carousel__prev-btn span, .alice-carousel__next-btn span {
   font-size: 2rem;
@@ -199,6 +200,47 @@ input:hover, button:hover {
 .sidebar {
   margin-left: 1rem;
   text-align: center;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  aspect-ratio: 3/1;
+  height:10rem;
+  padding:0px
+}
+.banner2 {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  left: 10rem;
+  right: 10rem;
+  bottom: 0rem;
+  aspect-ratio: 3/1;
+  height:10rem;
+  padding:0px
+}
+.justiceBlind {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  scale: .5;
+  left: -4rem;
+  top: 0rem;
+  bottom: 36rem;
+}
+.justiceBlind2 {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  scale: .5;
+  right: -1.9rem;
+  top: 0rem;
+  bottom: 36rem;
 }
 
 .hidden {

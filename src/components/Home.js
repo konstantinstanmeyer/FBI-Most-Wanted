@@ -4,6 +4,10 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import Criminal from "./Criminal";
 
 import fbi_seal from "../assets/fbi_seal.png";
+import usabanner from "../assets/usabanner.png"
+import usabanner2 from "../assets/usabanner2.png"
+import justice from "../assets/justice.png"
+import justiceright from "../assets/justiceright.png"
 
 function Home({ isLightMode }) {
   const [suspectList, setSuspectList] = useState([])
@@ -31,8 +35,29 @@ function Home({ isLightMode }) {
         <div className="seal">
           <img style={{ width: "15rem" }} src={fbi_seal} alt="fbi seal"/>
         </div>
+        <p>The Federal Bureau of Investigation needs your help to catch, kill or otherwise render inoperable these various threats to freedom.</p>
+      </div>
+        <div className="justiceBlind">
+          <div className="sidebar panel">
+          <img src={justice} />
+          </div>
+        </div>
+        <div className="justiceBlind2">
+          <div className="sidebar panel">
+          <img src={justiceright} />
+          </div>
+        </div>
+      
+      <div style={{ width: "15rem" }} className="footer">
+        <div className="banner">
+          <img src={usabanner}/>
+        </div>
+        <div>
+        <img src={usabanner2} style={{ width: "90rem"}} className="banner2"/>
+        </div>
       </div>
     </div>
+    
   )
 }
 
