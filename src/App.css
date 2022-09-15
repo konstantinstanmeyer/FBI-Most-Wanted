@@ -196,48 +196,28 @@ input:hover, button:hover {
 }
 .alice-carousel__prev-btn span, .alice-carousel__next-btn span {
   font-size: 2rem;
-} 
+}
 .sidebar {
   margin-left: 1rem;
   text-align: center;
 }
-.banner {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  left: 0rem;
-  right: 0rem;
-  bottom: 0rem;
-  aspect-ratio: 3/1;
-  height:10rem;
-  padding:0px
+
+.hidden {
+  display: none;
 }
-.banner2 {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  left: 10rem;
-  right: 10rem;
-  bottom: 0rem;
-  aspect-ratio: 3/1;
-  height:10rem;
-  padding:0px
-}
-.justiceBlind {
+
+.scorecounter {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  scale: .5;
-  left: -4rem;
-  top: 0rem;
-  bottom: 36rem;
 }
-.justiceBlind2 {
+.rps-circle {
+  margin: auto 0rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+.gameboard-container {
   display: flex;
-  flex-direction: column;
-  position: fixed;
-  scale: .5;
-  right: -1.9rem;
-  top: 0rem;
-  bottom: 36rem;
+  flex-direction: row;
+  height: 100%;
 }

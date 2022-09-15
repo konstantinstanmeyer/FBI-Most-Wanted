@@ -4,13 +4,15 @@
 }
 
 #enemy-pic {
-    height: 200px;
     display: cover;
+    width: 150px;
+    border-radius: 1rem;
 }
 
 #detective-pic{
     height: 200px;
     display: cover;
+    border-radius: 1rem;
 }
 
 .button-container{
@@ -18,10 +20,11 @@
     flex-direction: row;
     bottom: 0px;
     margin-top: 1rem;
-    width: 100%;
+    width: calc(100% - 2rem);
 }
 
 #player-cards {
+    position: relative;
     float: left;
     display: flex;
     flex-direction: column;
@@ -30,6 +33,7 @@
 }
 
 .enemy-card {
+    position: relative;
     padding-top: 0px;
     display:flex;
     flex-direction: column;
@@ -76,7 +80,9 @@
     align-items: center;
     flex-direction: column;
     padding: 0px 0px 0px;
+    margin: 0rem 1rem;
     width: 100%;
+    position: relative;
 }
 
 .enemy-hand {
@@ -100,16 +106,90 @@
     height: 50px;
     width: 50px;
     position: absolute;
-    bottom: 200px;
+    bottom: 100px;
+    z-index: 1;
 }
 
 .move-enemy{
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 250px;
+    top: 100px;
+    z-index: 1;
 }
 
 img[src=""]{
     display: none;
+}
+
+#fireball1 {
+    position: absolute;
+    top: -30px;
+    left: 30px;
+}
+
+#fireball2 {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#fireball3 {
+    position: absolute;
+    top: 90px;
+    right: -30px;
+}
+
+#fireball5 {
+    position: absolute;
+    bottom: -20px;
+    right: 30px;
+}
+
+#fireball6 {
+    position: absolute;
+    bottom: 50px;
+    right: -30px;
+}
+
+.win-text {
+    position: relative;
+    justify-content: center;
+    width: 50%;
+}
+
+.win-h2{
+    position: absolute;
+    top: -75px;
+    right: 33px;
+    font-size: 100px;
+}
+
+.win-p{
+    position: absolute;
+    text-align: center;
+    bottom: -90px;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.loss-text {
+    position: relative;
+    justify-content: center;
+    width: 50%;
+}
+
+.loss-h2 {
+    position: absolute;
+    top: -75px;
+    right: 5px;
+    font-size: 100px;
+}
+
+.loss-p {
+    position: absolute;
+    text-align: center;
+    bottom: -90px;
+    z-index: 2;
+    font-weight: bold;
 }
