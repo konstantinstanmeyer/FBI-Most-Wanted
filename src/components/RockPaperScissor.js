@@ -17,7 +17,7 @@ function RockPaperScissor(){
         fetch("http://localhost:3000/items")
         .then(r => r.json())
         .then(data => {
-            setCriminal(data[Math.floor(Math.random() * (6))])
+            setCriminal(data[Math.floor(Math.random() * (data.length))])
         })
     }, [])
     //sets both choices to state
