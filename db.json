@@ -55,6 +55,14 @@
       "suspectDesc": "Balding, Sandy Blond or Light Brown",
       "mugshot": "https://www.fbi.gov/wanted/cyber/marat-valeryevich-tyukov/@@images/image",
       "id": "6f59ed3f0c1d48f8b0bd35611e3d405d"
+    },
+    {
+      "name": "Elliot 'I'm a Computer' Mangini",
+      "bounty": 500000,
+      "crimeDesc": "Conspiracy to commit cybersecurity fraud, a history treasonous and revolutionary actions, hacked CIA database and changed all current field operatives to various kittens and puppies",
+      "suspectDesc": "Tall, Dark, Handsome, Mysterious",
+      "mugshot": "https://ca.slack-edge.com/T02MD9XTF-U03RE6P2LTB-df3fd5efa7db-512",
+      "id": "69420d7-4qqq-b443-8888-666ecf99e6ez"
     }
   ]
 }
