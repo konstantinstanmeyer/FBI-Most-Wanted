@@ -12,11 +12,11 @@ function RockPaperScissor(){
     const [enemyPic, setEnemyPic] = useState("");
     const [userScore, setUserScore] = useState(0);
     const [enemyScore, setEnemyScore] = useState(0);
-    const [winCondition, setWinCondition] = useState("play")
-    const [userWinAnimation, setUserWinAnimation] = useState(false)
-    const [enemyWinAnimation, setEnemyWinAnimation] = useState(false)
-    const [winText, setWinText] = useState(false)
-    const [lossText, setLossText] = useState(false)
+    const [winCondition, setWinCondition] = useState("play");
+    const [userWinAnimation, setUserWinAnimation] = useState(false);
+    const [enemyWinAnimation, setEnemyWinAnimation] = useState(false);
+    const [winText, setWinText] = useState(false);
+    const [lossText, setLossText] = useState(false);
     const choices = ["rock", "paper", "scissors"];
     let parsedMugshot = criminal.mugshot;
 
