@@ -53,7 +53,7 @@ function Home({ isLightMode }) {
           <img src={usabanner}/>
         </div>
         <div>
-        <img src={usabanner2} style={{ width: "90rem"}} className="banner2"/>
+        <img src={usabanner2} style={{ width: "180rem"}} className="banner2"/>
         </div>
       </div>
     </div>
